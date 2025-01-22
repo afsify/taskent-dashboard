@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Roboto", serif;
+  }
+}
+
+.ant-btn {
+  background-color: #003135; /* Button background color */
+  color: white; /* Set text color to white */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for scale and background color */
+}
+
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 18px;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #003135;
+  border-radius: 18px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #024950;
+}
