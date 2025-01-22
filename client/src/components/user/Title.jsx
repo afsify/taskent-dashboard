@@ -10,6 +10,7 @@ function Title({ children }) {
   const handleChange = () => {
     dispatch(toggleTheme());
   };
+
   return (
     <motion.div
       className="bg-main-theme text-white sticky top-0 z-20 shadow-black shadow-md rounded-b-2xl h-14 flex justify-center px-4"

@@ -34,126 +34,62 @@ const Count = ({ data }) => {
     { newUsers: 0, activeUsers: 0 }
   );
 
+  const cardData = [
+    {
+      title: "Total Monthly Sales",
+      value: `₹${totalMonthlySales.toLocaleString()}`,
+      color: "#1890ff",
+    },
+    {
+      title: "Top Category Revenue",
+      value: `${
+        highestRevenueCategory.category
+      } - ₹${highestRevenueCategory.revenue.toLocaleString()}`,
+      color: "#52c41a",
+    },
+    {
+      title: "Daily Active Users",
+      value: totalDailyActiveUsers.toLocaleString(),
+    },
+    { title: "Excellent Ratings", value: excellentRatings },
+    {
+      title: "Total Online Sales",
+      value: `₹${totalOnlineSales.toLocaleString()}`,
+    },
+    {
+      title: "Total Offline Sales",
+      value: `₹${totalOfflineSales.toLocaleString()}`,
+    },
+    { title: "Total New Users", value: totalUsers.newUsers.toLocaleString() },
+    {
+      title: "Total Active Users",
+      value: totalUsers.activeUsers.toLocaleString(),
+    },
+  ];
+
   return (
     <div className="my-4">
       <Row gutter={[16, 16]}>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Card
-            title="Total Monthly Sales"
-            bordered={false}
-            style={{
-              textAlign: "center",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: "8px",
-              padding: "16px",
-            }}
-          >
-            <h2 style={{ color: "#1890ff", fontWeight: "bold" }}>
-              ₹{totalMonthlySales.toLocaleString()}
-            </h2>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Card
-            title="Top Category Revenue"
-            bordered={false}
-            style={{
-              textAlign: "center",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: "8px",
-              padding: "16px",
-            }}
-          >
-            <h2 style={{ color: "#52c41a", fontWeight: "bold" }}>
-              {highestRevenueCategory.category} - ₹
-              {highestRevenueCategory.revenue.toLocaleString()}
-            </h2>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Card
-            title="Daily Active Users"
-            bordered={false}
-            style={{
-              textAlign: "center",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: "8px",
-              padding: "16px",
-            }}
-          >
-            <h2>{totalDailyActiveUsers.toLocaleString()}</h2>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Card
-            title="Excellent Ratings"
-            bordered={false}
-            style={{
-              textAlign: "center",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: "8px",
-              padding: "16px",
-            }}
-          >
-            <h2>{excellentRatings}</h2>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Card
-            title="Total Online Sales"
-            bordered={false}
-            style={{
-              textAlign: "center",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: "8px",
-              padding: "16px",
-            }}
-          >
-            <h2>₹{totalOnlineSales.toLocaleString()}</h2>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Card
-            title="Total Offline Sales"
-            bordered={false}
-            style={{
-              textAlign: "center",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: "8px",
-              padding: "16px",
-            }}
-          >
-            <h2>₹{totalOfflineSales.toLocaleString()}</h2>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Card
-            title="Total New Users"
-            bordered={false}
-            style={{
-              textAlign: "center",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: "8px",
-              padding: "16px",
-            }}
-          >
-            <h2>{totalUsers.newUsers.toLocaleString()}</h2>
-          </Card>
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Card
-            title="Total Active Users"
-            bordered={false}
-            style={{
-              textAlign: "center",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: "8px",
-              padding: "16px",
-            }}
-          >
-            <h2>{totalUsers.activeUsers.toLocaleString()}</h2>
-          </Card>
-        </Col>
+        {cardData.map((card, index) => (
+          <Col key={index} xs={24} sm={12} md={8} lg={6}>
+            <Card
+              title={card.title}
+              bordered={false}
+              style={{
+                textAlign: "center",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                borderRadius: "8px",
+                padding: "16px",
+              }}
+            >
+              <h2
+                style={{ color: card.color || "inherit", fontWeight: "bold" }}
+              >
+                {card.value}
+              </h2>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </div>
   );

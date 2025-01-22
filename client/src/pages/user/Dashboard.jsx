@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Count from "../../components/user/Count";
+import Empty from "../../components/user/Empty";
 import UserLayout from "../../layout/UserLayout";
 import PageTitle from "../../components/user/Title";
 import { Bar, Pie, Line, Doughnut } from "react-chartjs-2";
@@ -16,7 +17,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Empty } from "antd";
 
 ChartJS.register(
   CategoryScale,
@@ -48,19 +48,7 @@ const Dashboard = () => {
         <PageTitle>
           <h2 className="text-xl font-semibold">Dashboard</h2>
         </PageTitle>
-        <div className="flex justify-center items-center h-auto">
-          <Empty
-            description={
-              <span style={{ fontSize: "20px", fontWeight: "bold" }}>
-                No Data Found
-              </span>
-            }
-            image={Empty.PRESENTED_IMAGE_SIMPLE}
-            imageStyle={{
-              height: 60,
-            }}
-          />
-        </div>
+        <Empty />
       </UserLayout>
     );
   }

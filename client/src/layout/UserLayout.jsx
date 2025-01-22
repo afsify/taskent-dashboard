@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { userPath } from "../routes/routeConfig";
@@ -13,7 +14,6 @@ import {
   SettingOutlined,
   BarChartOutlined,
 } from "@ant-design/icons";
-import { Button } from "antd";
 
 function UserLayout({ children }) {
   const location = useLocation();

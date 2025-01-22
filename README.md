@@ -31,9 +31,9 @@ Welcome to the **Taskent Dashboard**, a powerful and responsive dashboard applic
 - **React.js**: JavaScript library for building user interfaces.
 - **Redux.js:** A predictable state container for JavaScript apps.
 - **Ant Design:** A design system for enterprise-level products.
-- **Chart.js**: Libraries for data visualization and chart creation.
+- **Chart.js**: Library for data visualization and chart creation.
 - **TailwindCSS**: Utility-first CSS framework for building custom designs quickly.
-- **jspdf / react-to-pdf**: Libraries for generating downloadable PDFs of user data.
+- **jspdf**: Library for generating downloadable PDFs of user data.
 
 ## Getting Started
 

@@ -11,13 +11,6 @@
   }
 }
 
-.ant-btn {
-  background-color: #003135; /* Button background color */
-  color: white; /* Set text color to white */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for scale and background color */
-}
-
-
 * {
   padding: 0%;
   margin: 0%;
