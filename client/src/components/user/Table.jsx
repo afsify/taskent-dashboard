@@ -1,3 +1,4 @@
+import Empty from "./Empty";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
@@ -26,7 +27,7 @@ function Table({ columns, data }) {
           {data.length === 0 ? (
             <tr>
               <td colSpan={columns.length} className="text-center py-4">
-                No data available.
+                <Empty/>
               </td>
             </tr>
           ) : (
