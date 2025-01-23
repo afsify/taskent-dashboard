@@ -1,6 +1,6 @@
 import { Button } from "antd";
-import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { userPath } from "../routes/routeConfig";
 import Switcher from "../components/common/Switcher";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,10 +56,8 @@ function UserLayout({ children }) {
         setOpen(true);
       }
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
