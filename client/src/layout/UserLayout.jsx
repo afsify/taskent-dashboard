@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { userPath } from "../routes/routeConfig";
 import Switcher from "../components/common/Switcher";
@@ -47,6 +47,23 @@ function UserLayout({ children }) {
   const handleChange = () => {
     dispatch(toggleTheme());
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1024) {
+        setOpen(false);
+      } else {
+        setOpen(true);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="container mx-auto flex">
