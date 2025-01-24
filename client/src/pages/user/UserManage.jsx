@@ -89,6 +89,16 @@ const UserManage = () => {
     const formattedDate = currentDate.toLocaleDateString("en-GB");
     const doc = new jsPDF();
     doc.text(`User List - ${formattedDate}`, 10, 10);
+    const filterHeading = [];
+    if (searchQuery) {
+      filterHeading.push(`Search Query: "${searchQuery}"`);
+    }
+    if (selectedCompany) {
+      filterHeading.push(`Filtered by Company: "${selectedCompany}"`);
+    }
+    if (filterHeading.length > 0) {
+      doc.text(`Filters Applied: ${filterHeading.join(", ")}`, 10, 20);
+    }
     const tableData = filteredUsers.map((user, index) => [
       index + 1,
       user.name,
@@ -96,6 +106,7 @@ const UserManage = () => {
       user.company.name,
     ]);
     doc.autoTable({
+      startY: filterHeading.length > 0 ? 30 : 20,
       head: [["#", "Name", "Email", "Company"]],
       body: tableData,
     });
